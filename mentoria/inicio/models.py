@@ -13,10 +13,10 @@ class agendas(models.Model):
     inicio_a = models.DateTimeField(auto_now=False, auto_now_add=False) 
     fim_a = models.DateTimeField(auto_now=False, auto_now_add=False) 
 
-class fotog(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    nome = models.CharField(max_length=250, blank=False)
-    foto = models.FileField()
+#class fotog(models.Model):
+#    id = models.BigAutoField(primary_key=True)
+#    nome = models.CharField(max_length=250, blank=False)
+#    foto = models.FileField()
 
 
 

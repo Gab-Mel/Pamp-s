@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.http import HttpResponse 
 from django.urls import reverse_lazy
 
-from inicio.forms import novo_user, nova_pendencia, fotofx
+from inicio.forms import novo_user, nova_pendencia
 
 # Create your views here.
 
@@ -50,17 +50,17 @@ def viajar(request, chave):
  
 
 
-def paisagem(request):
-    if request.method == 'POST':
-        if request.method == 'POST':
-            farm = fotofx(request.POST, request.FILES)
-            if farm.is_volid():
-                farm.save()
-                return redirect(reverse_lazy("inicio:special"))
-        else:
-            farm = fotofx()
-        context = {
-            'farm': farm
-        }
-        return render(request, 'inicio/paisagem.html')
+#def paisagem(request):
+#    if request.method == 'POST':
+#        if request.method == 'POST':
+#            farm = fotofx(request.POST, request.FILES)
+#            if farm.is_volid():
+#                farm.save()
+#                return redirect(reverse_lazy("inicio:special"))
+#        else:
+#            farm = fotofx()
+#        context = {
+#            'farm': farm
+#        }
+#        return render(request, 'inicio/paisagem.html')
 
