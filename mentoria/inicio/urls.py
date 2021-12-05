@@ -6,7 +6,9 @@ urlpatterns = [
     path("", views.aluno, name = 'aluno'),
     path("<slug:chave>", views.navegar, name = 'navegar'),
     path("usuario/<slug:chave>", views.viajar, name = 'viajar'),
-    #path('paisagem', views.paisagem, name ="paisagem"),
+    path("usuario/agenda", views.pendencia, name = 'pendencia'),
+
+    path('paisagem', views.paisagem, name ="paisagem"),
 
     #path("index/", views.index, name ="index"),
 ]

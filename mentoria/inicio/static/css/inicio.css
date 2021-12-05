@@ -1,14 +1,36 @@
-body{
-    padding-left: 15px;
-}
-
 .bob{
     padding-left: 50px;
     margin-left: 50px;
+    margin-right: 50px;
 }
 
-.btn-primary {
+.btn-primary{
     background-color: darkseagreen;
     border-color: darkslategrey;
 }
 
+.navbar-expand-lg{
+    background-color: teal;
+    flood-color: teal;
+    scrollbar-color: teal;
+    color-adjust: teal;
+    color-scheme: teal;
+
+}
+
+.navbar-light{
+    background-color: teal;
+}
+
+.bg-light{
+    background-color: teal;
+
+}
+
+.navbar{
+    background-color: teal;
+}
+
+#ha{
+    background-color: teal;
+}

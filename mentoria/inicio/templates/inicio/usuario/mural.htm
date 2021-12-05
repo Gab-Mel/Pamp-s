@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
     </head>
 
-    <body>
+    {% block content %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <table>
                 <tr><td><a class="navbar-brand" href="{%url "navegar" chave='usuario' %}">Dark Rafa</a></td><td><img src="../../usuario/img/perfil.png" alt="perfil" style="height:40px;width:40px;"></td></tr>
@@ -47,5 +47,5 @@
             </table>
         </div>
 
-    </body>
+    {% endblock%}
 </html>

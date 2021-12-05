@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
     </head>
 
-    <body>
+    {% block content %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <table>
                 <tr><td><a class="navbar-brand" href="{%url "navegar" chave='usuario' %}">Dark Rafa</a></td><td><img src="../supervisor/img/perfil.png" alt="perfil" style="height:40px;width:40px;"></td></tr>
@@ -23,6 +23,19 @@
             <a class="btn btn-primary" href="{%url "special" %}">Sair</a> 
         </nav>
 
+        <form action="{% url 'pendencia' %}" method="post">
+            {% csrf_token %}
+            <div class = "box">
+                <table class = 'bob'>
+                    <tr><th>Criar nova pendência</th></tr>
+                    <tr><td>Pendência:</td><td><input class="form-control"class="form-control"type="text" name="pendencia_a" aria-describedby="button-addon3" required></td></tr>
+                    <tr><td>Inicio:</td><td><input class="form-control"class="form-control" type="datetime" name="inicio_a" aria-describedby="button-addon3" required></td></tr>
+                    <tr><td>Fim:</td><td><input class="form-control"class="form-control" type="datetime" name="fim_a" aria-describedby="button-addon3" required></td></tr>
+                    <tr><td><a class="btn btn-primary" href="{% url "special" %}">Sair</a></td><td><button class="btn btn-success" type="submit" id="button-addon3">Criar</button></td></tr>
+                </table>
+            </div>
+        </form>
 
-    </body>
+
+        {% endblock%}
 </html>

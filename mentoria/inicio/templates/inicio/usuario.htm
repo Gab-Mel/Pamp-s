@@ -11,9 +11,10 @@
         <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
     </head>
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <table>
+    {% block content %}
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="ha">
+            <table class="bob">
                 <tr><td><a class="navbar-brand" href="{%url "navegar" chave='usuario' %}">Tio Rafa</a></td><td><img class="displayed" src="img/perfil.png" alt="perfil" style="height:40px;width:40px;"></td></tr>
             </table>
             <a class="navbar-brand" href="{%url "viajar" chave='agenda' %}">Agenda</a>
@@ -23,7 +24,7 @@
         </nav>
         
         <div class = "box">
-            <table>
+            <table class="bob">
                 <tr>Adicionar disciplina</tr>
                 <tr><input class="form-control"type="text" name="codigo" placeholder="Insira Id da disciplina"></tr>
             </table>
@@ -41,5 +42,5 @@
             </table>
         </div>
 
-    </body>
+    {% endblock %}
 </html>

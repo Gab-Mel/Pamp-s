@@ -1,9 +1,9 @@
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse 
 from django.urls import reverse_lazy
 
-from inicio.forms import novo_user
+from inicio.forms import novo_user, nova_pendencia, fotofx
 
 # Create your views here.
 
@@ -18,6 +18,19 @@ def aluno(request):
             return render(request, 'inicio/index.htm')
         else:
             render(request, 'inicio/create.htm', {'form':form}, status=400)
+
+def pendencia(request):
+    if request.method == 'POST':
+        pet = nova_pendencia(request.POST)
+        if pet.is_valid():
+            pet.save()
+
+
+            return render(request, 'inicio/usuario/agenda.htm')
+
+
+        else:
+            render(request, 'inicio/usuario/agenda.htm', {'pet':pet}, status=400)
     
 def navegar(request, chave):
     if chave == 'criar':
@@ -34,18 +47,20 @@ def viajar(request, chave):
         return render(request, 'inicio/usuario/mural.htm')
     elif chave == 'video':
         return render(request, 'inicio/usuario/video.htm')
+ 
 
-#def paisagem(request):
-#    if request.method == 'POST':
-#        if request.method == 'POST':
-#            farm = fotofx(request.POST, request.FILES)
-#            if farm.is_volid():
-#                farm.save()
-#                return redirect(reverse_lazy("inicio:special"))
-#        else:
-#            farm = fotofx()
-#        context = {
-#            'farm': farm
-#        }
-#        return render(request, 'inicio/paisagem.html')
+
+def paisagem(request):
+    if request.method == 'POST':
+        if request.method == 'POST':
+            farm = fotofx(request.POST, request.FILES)
+            if farm.is_volid():
+                farm.save()
+                return redirect(reverse_lazy("inicio:special"))
+        else:
+            farm = fotofx()
+        context = {
+            'farm': farm
+        }
+        return render(request, 'inicio/paisagem.html')
 
