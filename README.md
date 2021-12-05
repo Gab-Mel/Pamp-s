@@ -9,3 +9,6 @@ não consegui fazer o ambiennte rodar pamdas em html
 
 os dois modelos estão no criar usuario e adicionar afazeres na agenda 
 
+local inicial
+http://127.0.0.1:8000/inicio
+
