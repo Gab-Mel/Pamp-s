@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" >
+
+    {% load static %}
+
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pamp!s</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <table>
+                <tr><td><a class="navbar-brand" href="{%url "navegar" chave='usuario' %}">Dark Rafa</a></td><td><img src="../../usuario/img/perfil.png" alt="perfil" style="height:40px;width:40px;"></td></tr>
+            </table>
+            <a class="navbar-brand" href="{%url "viajar" chave='agenda' %}">Agenda</a>
+            <a class="navbar-brand" href="{%url "viajar" chave='mural' %}">Mural</a>
+            <a class="navbar-brand" href="{%url "viajar" chave='material' %}">Material</a>
+            <a class="navbar-brand" href="{%url "viajar" chave='video' %}">Videos</a>
+            <div>
+                <img src="../../img/logo.png" alt="logo" style="height:40px;width:100px;">
+            </div>    
+            <a class="btn btn-primary" href="{%url "special" %}">Sair</a>
+        </nav>
+        
+        <div class = "box">
+            <table>
+                <tr><h4>Aula on-line</h4></tr>
+                <tr>Iniciar call</tr>
+            </table>
+        </div>
+        <div class = "box">
+            <table>
+                <tr><h4>Adicionar Video</h4></tr>
+                <tr><input type="text" name="Titulo"></tr>
+                <tr><input type="text" name="comentario"></tr>
+                <tr><input type="file" name="video" required></tr>
+            </table>
+        </div>
+        <div class = "box">
+            <table>
+                <tr><h4>Titulo</h4></tr>
+                <tr>Video</tr>
+            </table>
+
+            <table>
+                <tr><h4>Aula 04</h4></tr>
+                <tr>Video da aula 04</tr>
+            </table>
+        </div>
+
+    </body>
+</html>

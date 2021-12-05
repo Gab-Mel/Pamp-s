@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{%block content %}
+
+<farm class='form-horizontal' action='{% url 'paisagem' % } method='post' enctype='multipart/form-data'>
+
+    {% csrf_token %}
+
+    <label for=''>Nome</label>
+    {{ farm.nome}}
+
+    <label for=''>Foto</label>
+    {{farm.foto}}
+
+    <button type='submit'>Enviar</button>
+
+</farm>
+
